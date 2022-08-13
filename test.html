@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>jQuery Test Page</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        div#myDiv{
+            /* background-color: orange; */
+        }
+
+        div#yetAnotherDiv li:nth-child(even){
+
+
+           /* background-color: yellow;
+           */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    
+    <h1>jQuery Test Page</h1>
+    <div id="myDiv">Im inside a div with an id of myDiv</div>
+
+    <div id="myOtherDiv">
+        <p>I am in a p tag</p>
+        <p>I am in a p tag</p>
+        <p>I am in a p tag</p>
+        <p>I am in a p tag</p>
+        <p>I am in a p tag</p>
+    </div>
+
+
+    <div id="yetAnotherDiv">
+        <ul>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+            <li>List item</li>
+        </ul>
+    </div>
+
+    <script>
+       
+        $("document").ready(function (){
+
+
+            let $theDiv = $("div#myDiv");
+
+                $theDiv
+                    .css("background-color","yellow")
+                    .css("border","1px solid black")
+                    .append("Here is some additional text!");
+
+                // $("div#myDiv").html('<a href="#">Link</a>');
+                //properties cant change or end
+                // $("div#myDiv").append("Text from jQuery!");
+
+            let counter = 0; 
+            $("div#myOtherDiv p").each(function(){
+                counter++;
+                $(this).prepend(counter + ")"); 
+
+            }); 
+
+            $("div#yetAnotherDiv li:nth-child(even)").css("background-color","blue");
+
+            $("div#yetAnotherDiv li").hide(); //hide li items
+            $("div#yetAnotherDiv").hide()
+            .fadeIn(3000,function(){
+                $("div#yetAnotherDiv li").each(function(){
+                    $(this).slideDown(2000);
+                })
+            })
+
+        });
+
+
+    </script>
+</body>
+
+
+
+
+
+
+</html>
+
+
