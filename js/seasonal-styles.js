@@ -8,12 +8,19 @@ $("document").ready(function(){
 // changes to spring link
 
 
+
 if(urlParams.has("#seasons a")){//data on query string, load from querystring
     myDay = urlParams.get("seasons"); 
 }
 switch (season) {
 
      case "default": 
+
+switch("#seasons"){
+
+
+    case 0: 
+
         season = "spring";
         $("header h3").text("Jump into spring! ");
         $("html").css("background-color","#2B7129");
@@ -21,7 +28,11 @@ switch (season) {
         $("#logo").attr("src","images/spring.gif");
         break;
 
+
     case "summer":
+
+    case 1:
+
         season = "summer"
         $("header h3").text("Jump into Summer! ");
         $("html").css("background-color","#EBA52B");
@@ -29,7 +40,11 @@ switch (season) {
         $("#logo").attr("src","images/summer.gif");
         break;
 
+
     case "fall":
+
+    case 2:
+
 
     season = "fall"
         $("header h3").text("Jump into Fall! ");
@@ -38,7 +53,11 @@ switch (season) {
         $("#logo").attr("src","images/fall.gif");
         break;
 
+
     case "winter": 
+
+    case 3: 
+
 
     season = "winter"
 
@@ -47,9 +66,25 @@ switch (season) {
         $("html").css("background-color","#005393");
         $("#wear").attr("src","images/winter-wear.jpg");
         $("#logo").attr("src","images/winter.gif");
+
 }
 
    
 
+
+
+
+
+}
+       
+
+       
+
+        
+
+
+
+    });
+});
 
 
